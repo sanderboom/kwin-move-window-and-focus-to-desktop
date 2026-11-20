@@ -2,6 +2,8 @@
 
 > KWin script that creates shortcuts for moving a window and the focus to a certain desktop.
 
+Requires Plasma 6 / KWin 6.8.
+
 ## Install:
 
 ### GUI:
@@ -11,11 +13,14 @@
 
 ### Command line:
 - Clone this repo
-- `zip -r movewindowandfocustodesktop.kwinscript contents/ metadata.desktop README.md`
-- `plasmapkg2 -i /path/to/movewindowandfocustodesktop.kwinscript`
+- `zip -r movewindowandfocustodesktop.kwinscript contents/ metadata.json README.md`
+- `kpackagetool6 -t KWin/Script -i /path/to/movewindowandfocustodesktop.kwinscript`
+- To upgrade an existing install: `kpackagetool6 -t KWin/Script -u /path/to/movewindowandfocustodesktop.kwinscript`
+
+Enable the script in `System Settings > Window Management > KWin Scripts`.
 
 ## Setup shortcuts
-Configure the global shortcuts at `System Settings > Shortcuts > Global Shortcuts > KWin`.  
+Configure the shortcuts at `System Settings > Shortcuts`, under the KWin component.
 
 Installation of the plugin will set the following shortcuts as default:  
  - Desktop 1: `Meta+Shift+1` aka `Meta+!`,
